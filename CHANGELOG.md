@@ -6,6 +6,20 @@ All notable changes to this project will be documented here.
 ## [0.2.0] - 2026-11-21
 
 ### Added
+- FastAPI backend application.
+- Root, health and profile REST endpoints.
+- Modular API routing using APIRouter.
+- Swagger API documentation.
+- Python virtual environment and requirements file.
+- Automated pytest API tests.
+
+### Tested
+- Three API endpoint tests passed.
+- No test warnings after dependency update.
+
+## [0.2.0] - 2026-11-21
+
+### Added
 - Deployed React portfolio frontend to Vercel.
 - Added public production portfolio URL.
 - Added Vercel deployment documentation.
