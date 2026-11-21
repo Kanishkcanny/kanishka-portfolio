@@ -52,12 +52,6 @@
 - Automated testing using pytest and TestClient.
 - API documentation using Swagger UI.
 
-## Next Steps
-- Add experience and projects APIs.
-- Configure CORS.
-- Connect React frontend with FastAPI.
-- Expand automated test coverage.
-- Containerize the application using Docker.
 
 ## Frontend and Backend Integration
 
@@ -85,7 +79,7 @@
 - Build output: frontend/dist/
 - Build time: 278 ms
 
-### Next Steps
+### Upcoming Work
 - Review backend configuration and CORS.
 - Add AI Portfolio Assistant.
 - Add environment-based API configuration.
