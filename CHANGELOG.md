@@ -3,6 +3,18 @@
 
 All notable changes to this project will be documented here.
 
+## [0.3.0] - 2026-11-21
+
+### Added
+- Expandable project lifecycle stages.
+- Implementation details section for each lifecycle stage.
+
+### Improved
+- Project detail page layout and lifecycle readability.
+
+### Tested
+- Frontend production build successful.
+
 ## [0.2.0] - 2026-11-21
 
 ### Added
@@ -16,8 +28,6 @@ All notable changes to this project will be documented here.
 ### Tested
 - Three API endpoint tests passed.
 - No test warnings after dependency update.
-
-## [0.2.0] - 2026-11-21
 
 ### Added
 - Deployed React portfolio frontend to Vercel.
@@ -34,6 +44,11 @@ All notable changes to this project will be documented here.
 - Build status: Successful
 
 ## [0.1.0] - 2026-11-20
+
+### Updated
+- Added expandable project lifecycle stages.
+- Improved project detail page layout and lifecycle readability.
+- Verified frontend production build successfully.
 
 ### Added
 - Initial React and Vite application.

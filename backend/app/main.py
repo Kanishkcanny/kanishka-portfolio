@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import health, profile
+from app.api.routes import health, profile, projects
 
 app = FastAPI(
     title="Kanishka Portfolio API",
@@ -25,6 +25,7 @@ app.add_middleware(
 # Register API routers
 app.include_router(health.router)
 app.include_router(profile.router)
+app.include_router(projects.router)
 
 
 @app.get("/")
