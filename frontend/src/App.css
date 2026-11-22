@@ -1063,3 +1063,110 @@
     padding-right: 13px;
   }
 }
+
+/* ========================================
+   PROFESSIONAL HERO SECTION
+======================================== */
+
+.hero-content {
+  min-width: 0;
+}
+
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+}
+
+.profile-photo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto;
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.3);
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 12px;
+}
+
+.profile-photo-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: calc(100% - 30px);
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: rgba(8, 13, 24, 0.92);
+  color: var(--text);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.hero-visual .terminal-card {
+  width: 100%;
+}
+
+.hero-visual .terminal-body {
+  padding: 22px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 45px;
+  }
+
+  .hero-visual {
+    max-width: 460px;
+    justify-self: center;
+    margin: 0 auto;
+  }
+
+  .profile-photo-wrapper {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding-top: 35px;
+    padding-bottom: 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 10vw, 48px);
+    letter-spacing: -2px;
+  }
+
+  .hero-buttons a {
+    text-align: center;
+  }
+
+  .profile-photo-wrapper {
+    max-width: 270px;
+  }
+
+  .hero-visual .terminal-body {
+    padding: 18px;
+  }
+}

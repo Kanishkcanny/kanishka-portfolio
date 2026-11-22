@@ -363,77 +363,102 @@ function App() {
       </nav>
 
       <main>
-        <section className="hero section-container" id="home">
-          <div className="hero-content">
-            <p className="eyebrow">
-              <span className="status-dot"></span>
-              AVAILABLE FOR OPPORTUNITIES
-            </p>
 
-            <h1>
-              Building reliable
-              <br />
-              infrastructure.
-              <br />
-              <span>Automating the future.</span>
-            </h1>
+<section className="hero section-container" id="home">
+  <div className="hero-content">
+    <p className="eyebrow">
+      <span className="status-dot"></span>
+      AVAILABLE FOR OPPORTUNITIES
+    </p>
 
-            <p className="hero-description">
-              Hi, I'm <strong>{profile?.name || "Kanishka Bhardwaj"}</strong>.{" "}
-              {profile?.headline ||
-                "A DevOps Engineer passionate about cloud infrastructure, automation, Kubernetes and building scalable systems."}
-            </p>
+    <h1>
+      Hi, I'm{" "}
+      <span>{profile?.name || "Kanishka Bhardwaj"}</span>
+      <br />
+      DevOps Engineer.
+    </h1>
 
-            <div className="hero-buttons">
-              <a href="#projects" className="button-primary">
-                Explore My Work ↗
-              </a>
-              <a href="#contact" className="button-secondary">
-                Contact Me
-              </a>
-            </div>
+    <p className="hero-description">
+      IT professional with <strong>4+ years of experience</strong> in
+      infrastructure operations, system administration and production
+      support. Passionate about AWS, Kubernetes, Terraform and building
+      reliable, automated infrastructure.
+    </p>
 
-            <div className="hero-location">
-              <span>📍 {profile?.location || "Bengaluru, India"}</span>
-              <span>☁ AWS · DevOps · Cloud</span>
-            </div>
-          </div>
+    <div className="hero-buttons">
+      <a
+        href="/resume/Kanishka-Bhardwaj-Resume.pdf"
+        className="button-primary"
+        download="Kanishka-Bhardwaj-Resume.pdf"
+      >
+        Download Resume ↓
+      </a>
 
-          <div className="terminal-card">
-            <div className="terminal-header">
-              <div className="terminal-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span>kanishka@devops:~</span>
-            </div>
+      <a href="#projects" className="button-secondary">
+        Explore My Work →
+      </a>
 
-            <div className="terminal-body">
-              <p><span className="terminal-muted">$</span> whoami</p>
-              <h2>kanishka-bhardwaj</h2>
+      <a href="#contact" className="button-secondary">
+        Contact Me
+      </a>
+    </div>
 
-              <p><span className="terminal-muted">$</span> cat role.txt</p>
-              <p className="terminal-green">DevOps Engineer</p>
+    <div className="hero-location">
+      <span>📍 {profile?.location || "Bengaluru, India"}</span>
+      <span>☁ AWS · DevOps · Cloud</span>
+    </div>
+  </div>
 
-              <p><span className="terminal-muted">$</span> ls skills/</p>
+  <div className="hero-visual">
+    <div className="profile-photo-wrapper">
+      <img
+        src="/images/profile.jpg"
+        alt="Kanishka Bhardwaj"
+        className="profile-photo"
+      />
+      <div className="profile-photo-caption">
+        <span className="status-dot"></span>
+        Open to opportunities
+      </div>
+    </div>
 
-              <div className="terminal-skills">
-                <span>aws</span>
-                <span>docker</span>
-                <span>kubernetes</span>
-                <span>terraform</span>
-                <span>linux</span>
-                <span>ci-cd</span>
-              </div>
+    <div className="terminal-card">
+      <div className="terminal-header">
+        <div className="terminal-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span>kanishka@devops:~</span>
+      </div>
 
-              <p className="terminal-ready">
-                <span className="terminal-muted">$</span> system.ready
-                <span className="cursor">_</span>
-              </p>
-            </div>
-          </div>
-        </section>
+      <div className="terminal-body">
+        <p><span className="terminal-muted">$</span> whoami</p>
+        <h2>kanishka-bhardwaj</h2>
+
+        <p><span className="terminal-muted">$</span> cat role.txt</p>
+        <p className="terminal-green">DevOps Engineer</p>
+
+        <p><span className="terminal-muted">$</span> ls skills/</p>
+
+        <div className="terminal-skills">
+          <span>aws</span>
+          <span>docker</span>
+          <span>kubernetes</span>
+          <span>terraform</span>
+          <span>linux</span>
+          <span>ci-cd</span>
+        </div>
+
+        <p className="terminal-ready">
+          <span className="terminal-muted">$</span> system.ready
+          <span className="cursor">_</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         <section className="stats section-container">
           <div><h2>4+</h2><p>Years of Experience</p></div>
