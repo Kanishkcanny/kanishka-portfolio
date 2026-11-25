@@ -3,6 +3,26 @@
 
 All notable changes to this project will be documented here.
 
+## [0.4.0] - 2026-11-25
+
+### Added
+- Dockerfiles for User Service and Order Service.
+- Docker Compose orchestration with a shared bridge network.
+- Docker health checks for both microservices.
+- Detailed implementation notes for the Microservices CI/CD & GitOps project.
+- WSL2 and Docker Desktop networking troubleshooting documentation.
+
+### Improved
+- Updated project lifecycle statuses and implementation details.
+- Added dynamic WSL gateway discovery commands.
+- Improved local frontend API configuration using VITE_API_URL.
+- Updated backend CORS configuration for local development on port 5174.
+
+### Tested
+- Both microservices and their health endpoints.
+- End-to-end order details API with associated user information.
+- Backend project API and portfolio project detail page.
+
 ## [0.3.0] - 2026-11-21
 
 ### Added

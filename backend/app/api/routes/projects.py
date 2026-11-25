@@ -6,6 +6,7 @@ router = APIRouter(
     tags=["Projects"]
 )
 
+
 projects = [
     {
         "id": "microservices-gitops",
@@ -13,78 +14,148 @@ projects = [
         "title": "Microservices CI/CD & GitOps",
         "category": "DevOps Project",
         "description": (
-            "Containerized microservices deployed on Amazon EKS "
-            "using Helm, Argo CD and GitHub Actions."
+            "A Python FastAPI microservices application with "
+            "Docker containerization, Docker Compose networking "
+            "and automated container health checks."
         ),
         "problem_statement": (
-            "The project focuses on automating application delivery "
-            "and managing Kubernetes deployments through GitOps."
+            "Build independently running User and Order services, "
+            "enable HTTP communication between them, and establish "
+            "a reliable containerized deployment workflow."
         ),
         "technologies": [
-            "AWS",
-            "EKS",
+            "Python",
+            "FastAPI",
+            "Uvicorn",
+            "HTTPX",
             "Docker",
-            "Kubernetes",
-            "Helm",
-            "GitHub Actions",
-            "Argo CD",
-            "Prometheus",
-            "Grafana"
+            "Docker Compose",
+            "Git",
+            "GitHub"
         ],
         "lifecycle": [
             {
                 "step": 1,
                 "name": "Planning & Requirements",
-                "description": "Define application architecture and deployment requirements.",
-                "status": "To be documented"
+                "description": "Design two independent services and their communication flow.",
+                "status": "Completed",
+                "details": {
+                    "objective": "Build independently running User and Order microservices.",
+                    "implementation": "Created a FastAPI architecture with separate service applications and REST endpoints.",
+                    "tools": ["Python", "FastAPI", "HTTP REST"],
+                    "outcome": "Both services run independently on ports 8001 and 8002."
+                }
             },
             {
                 "step": 2,
                 "name": "Infrastructure Setup",
-                "description": "Prepare AWS infrastructure and Kubernetes environment.",
-                "status": "To be documented"
+                "description": "Prepare the local development environment and Docker network.",
+                "status": "Completed",
+                "details": {
+                    "objective": "Prepare an environment to run and connect both services.",
+                    "implementation": "Configured Docker Compose with a shared bridge network and service discovery.",
+                    "tools": ["Ubuntu", "WSL2", "Docker Desktop", "Docker Compose"],
+                    "commands": [
+                        "docker compose config",
+                        "docker compose up -d --build",
+                        "docker compose ps"
+                    ],
+                    "outcome": "Both containers run on the shared Docker network."
+                }
             },
             {
                 "step": 3,
                 "name": "Containerization",
-                "description": "Build Docker images for application services.",
-                "status": "To be documented"
+                "description": "Build and run both services as independent Docker containers.",
+                "status": "Completed",
+                "details": {
+                    "objective": "Package each microservice with its runtime dependencies.",
+                    "implementation": "Created separate Dockerfiles and a Docker Compose configuration for both services.",
+                    "tools": ["Docker", "Docker Compose", "Python 3.12"],
+                    "commands": [
+                        "docker compose build",
+                        "docker compose up -d --build",
+                        "docker compose logs",
+                        "docker compose ps"
+                    ],
+                    "outcome": "Both service containers built and started successfully."
+                }
             },
             {
                 "step": 4,
                 "name": "CI Pipeline",
-                "description": "Automate build and validation using GitHub Actions.",
-                "status": "To be documented"
+                "description": "Automate application testing and image builds using GitHub Actions.",
+                "status": "Planned",
+                "details": {
+                    "objective": "Automate validation and container image builds.",
+                    "implementation": "GitHub Actions workflow has not been implemented yet.",
+                    "tools": ["GitHub Actions"],
+                    "outcome": "Planned for the next development milestone."
+                }
             },
             {
                 "step": 5,
                 "name": "Kubernetes Deployment",
-                "description": "Deploy applications using Kubernetes and Helm.",
-                "status": "To be documented"
+                "description": "Deploy both microservices to a Kubernetes cluster.",
+                "status": "Planned",
+                "details": {
+                    "objective": "Orchestrate the microservices using Kubernetes.",
+                    "implementation": "Kubernetes deployments and services have not been implemented yet.",
+                    "tools": ["Kubernetes", "kubectl"],
+                    "outcome": "Planned."
+                }
             },
             {
                 "step": 6,
                 "name": "GitOps",
-                "description": "Manage application deployment through Argo CD.",
-                "status": "To be documented"
+                "description": "Manage application deployment through a GitOps workflow.",
+                "status": "Planned",
+                "details": {
+                    "objective": "Automate deployment synchronization from Git.",
+                    "implementation": "Helm and Argo CD have not been implemented yet.",
+                    "tools": ["Helm", "Argo CD"],
+                    "outcome": "Planned."
+                }
             },
             {
                 "step": 7,
-                "name": "Monitoring",
-                "description": "Monitor application and cluster metrics using Prometheus and Grafana.",
-                "status": "To be documented"
+                "name": "Monitoring & Validation",
+                "description": "Validate application health and investigate connectivity issues.",
+                "status": "In progress",
+                "details": {
+                    "objective": "Validate service availability and troubleshoot container networking.",
+                    "implementation": "Added Docker health checks to both services. Investigated WSL2 and Docker Desktop localhost connectivity and verified the Windows host gateway workaround.",
+                    "tools": [
+                        "Docker Health Checks",
+                        "Docker Compose",
+                        "curl",
+                        "WSL2"
+                    ],
+                    "commands": [
+    "docker compose ps",
+    "docker compose logs --tail=50",
+    "WSL_GATEWAY=$(ip route show default | awk '{print $3; exit}')",
+    'curl "http://${WSL_GATEWAY}:8001/health"',
+    'curl "http://${WSL_GATEWAY}:8002/health"',
+    'curl "http://${WSL_GATEWAY}:8002/orders/101/details"'
+],
+                    "challenges": "Ubuntu WSL could not access Docker published ports through 127.0.0.1, while Windows and the Windows host gateway could reach them. The underlying localhost forwarding cause remains under investigation.",
+                    "outcome": "Both containers reported healthy and end-to-end order-to-user communication was verified. Prometheus and Grafana monitoring remain pending."
+                }
             }
         ],
         "architecture": {
             "description": (
-                "Planned flow: Developer -> GitHub -> GitHub Actions "
-                "-> Container Registry -> Kubernetes EKS -> Argo CD "
-                "-> Monitoring."
+                "Client -> Order Service (8002) -> User Service (8001). "
+                "Both services run in separate Docker containers connected "
+                "through a shared Docker bridge network. Docker health "
+                "checks validate application readiness."
             ),
             "diagram": None
         },
-        "repository": None
+        "repository": "https://github.com/Kanishkcanny/microservices-gitops"
     },
+
     {
         "id": "aws-ha-infrastructure",
         "number": "02",
@@ -163,6 +234,7 @@ projects = [
         },
         "repository": None
     },
+
     {
         "id": "aws-cost-automation",
         "number": "03",

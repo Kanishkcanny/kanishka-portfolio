@@ -15,7 +15,7 @@ app = FastAPI(
 # Local development + deployed frontend URLs
 frontend_origins = os.getenv(
     "FRONTEND_URL",
-    "http://localhost:5173,http://127.0.0.1:5173,https://kanishka-portfolio-iota.vercel.app",
+    "http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174,https://kanishka-portfolio-iota.vercel.app",
 )
 
 allowed_origins = [
